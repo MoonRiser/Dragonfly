@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply from: 'tinkerpatch.gradle'
 
+def name = project.getName()
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.1"
@@ -12,6 +13,12 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: name]
+            }
+        }
     }
 
 
@@ -20,9 +27,9 @@ android {
         release {
             try {
                 storeFile file("./debug.keystore")
-                storePassword "moonrise636"
+                storePassword "${STORE_PSW}"
                 keyAlias "mkey"
-                keyPassword "153411"
+                keyPassword "${KEY_PSW}"
             } catch (ex) {
                 throw new InvalidUserDataException(ex.toString())
             }
@@ -30,9 +37,9 @@ android {
 
         debug {
             storeFile file("./debug.keystore")
-            storePassword "moonrise636"
+            storePassword "${STORE_PSW}"
             keyAlias "mkey"
-            keyPassword "153411"
+            keyPassword "${KEY_PSW}"
         }
     }
 // 支持大工程模式
@@ -75,6 +82,9 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
+
+    implementation 'com.alibaba:arouter-api:1.5.0'
+    annotationProcessor 'com.alibaba:arouter-compiler:1.2.2'
 
     //核心sdk库
     api("com.tencent.tinker:tinker-android-lib:${TINKER_VERSION}") { changing = true }

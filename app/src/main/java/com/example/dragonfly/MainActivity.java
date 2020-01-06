@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.BTtest).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               test();
+                test();
             }
         });
 
@@ -80,13 +80,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void test(){
+    private void test() {
         File patchDir = SharePatchFileUtil.getPatchDirectory(this);
-        List<String> list =  getDirsNames(patchDir);
-        if (list==null)return;
-        for (String patch:list
-             ) {
-            Log.i("tinker补丁路径:",patch);
+        List<String> list = getDirsNames(patchDir);
+        if (list == null) return;
+        for (String patch : list
+        ) {
+            Log.i("tinker补丁路径:", patch);
         }
     }
 
