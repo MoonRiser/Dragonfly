@@ -1,4 +1,4 @@
-package com.example.dragonfly.tinker.util;
+package com.example.dragonfly.utils;
 
 import android.app.Activity;
 import android.content.Context;
