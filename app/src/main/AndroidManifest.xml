@@ -5,6 +5,7 @@
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".MyApplication"
@@ -14,8 +15,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.TestActivity"></activity>
-        <!-- android:requestLegacyExternalStorage="true" -->
+        <activity
+            android:name=".ui.activity.HomeActivity"
+            android:label="@string/title_activity_home"></activity>
+        <activity android:name=".ui.WebActivity" />
+        <activity android:name=".ui.BubbleActivity" />
+        <activity android:name=".ui.TestActivity" /> <!-- android:requestLegacyExternalStorage="true" -->
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.fileProvider"
@@ -32,13 +37,14 @@
             android:exported="false"
             android:permission="android.permission.BIND_JOB_SERVICE" />
 
-        <activity android:name=".activity.MainActivity">
+        <activity android:name="com.example.loginmodule.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.MainActivity" />
     </application>
 
 </manifest>

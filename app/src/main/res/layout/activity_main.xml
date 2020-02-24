@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.MainActivity">
+    tools:context=".ui.MainActivity">
 
     <TextView
         android:id="@+id/textView2"
@@ -77,8 +77,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
-        android:text="Button"
+        android:text="通知demo"
         app:layout_constraintBottom_toTopOf="@+id/BTwithdraw"
         app:layout_constraintStart_toStartOf="@+id/BTwithdraw" />
+
+    <Button
+        android:id="@+id/BTbubble"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="32dp"
+        android:text="自定义view"
+        app:layout_constraintBottom_toTopOf="@+id/BTjmp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/BTweb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="拦截器"
+        app:layout_constraintBottom_toBottomOf="@+id/BTbubble"
+        app:layout_constraintStart_toStartOf="@+id/guideline" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

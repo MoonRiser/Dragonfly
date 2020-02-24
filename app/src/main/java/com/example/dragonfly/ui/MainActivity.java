@@ -1,5 +1,6 @@
-package com.example.dragonfly.activity;
+package com.example.dragonfly.ui;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -23,6 +24,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private static final int REQUEST_EXTERNAL_STORAGE = 1;
+    private static final int REQUEST_INTERNET = 2;
     private static String[] PERMISSIONS_STORAGE = {
             "android.permission.READ_EXTERNAL_STORAGE",
             "android.permission.WRITE_EXTERNAL_STORAGE"};
@@ -61,7 +63,23 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.BTjmp).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,TestActivity.class);
+                Intent intent = new Intent(MainActivity.this, TestActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.BTbubble).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, BubbleActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.BTweb).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, WebActivity.class);
                 startActivity(intent);
             }
         });
@@ -99,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public static void verifyStoragePermissions(Activity activity) {
+    public  void verifyStoragePermissions(Activity activity) {
 
         try {
             //检测是否有写的权限
@@ -108,6 +126,7 @@ public class MainActivity extends AppCompatActivity {
             if (permission != PackageManager.PERMISSION_GRANTED) {
                 // 没有写的权限，去申请写的权限，会弹出对话框
                 ActivityCompat.requestPermissions(activity, PERMISSIONS_STORAGE, REQUEST_EXTERNAL_STORAGE);
+                ActivityCompat.requestPermissions(activity,new String[]{Manifest.permission.INTERNET},REQUEST_INTERNET);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -115,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public static List<String> getDirsNames(File file) {
+    public  List<String> getDirsNames(File file) {
         File[] files = file.listFiles();
         if (files == null) {
             Log.e("error", "空目录");

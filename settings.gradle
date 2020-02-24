@@ -1,2 +1,4 @@
-include ':app'
-rootProject.name='Dragonfly'
+include ':app', ':commons', ':router'
+include ':loginmodule'
+include ':standalone:loginmodulestandalone'
+rootProject.name = 'Dragonfly'

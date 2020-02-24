@@ -45,26 +45,26 @@ public class SoftKeyboardUtil {
         }
     }
 
-    /**
-     * 获取当前软键盘的状态
-     *
-     * @param activity
-     * @return
-     */
-    public static boolean isSoftInputShow(Activity activity) {
-
-
-        View view = activity.getWindow().peekDecorView();
-        if (view != null) {
-
-            InputMethodManager inputManager = (InputMethodManager) activity
-                    .getSystemService(Activity.INPUT_METHOD_SERVICE);
-            if (inputManager != null) {
-                return inputManager.isActive() && activity.getWindow().getCurrentFocus() != null;
-            }
-        }
-        return false;
-    }
+//    /**
+//     * 获取当前软键盘的状态
+//     *
+//     * @param activity
+//     * @return
+//     */
+//    public static boolean isSoftInputShow(Activity activity) {
+//
+//
+//        View view = activity.getWindow().peekDecorView();
+//        if (view != null) {
+//
+//            InputMethodManager inputManager = (InputMethodManager) activity
+//                    .getSystemService(Activity.INPUT_METHOD_SERVICE);
+//            if (inputManager != null) {
+//                return inputManager.isActive() && activity.getWindow().getCurrentFocus() != null;
+//            }
+//        }
+//        return false;
+//    }
 
 
 //    View.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener(){

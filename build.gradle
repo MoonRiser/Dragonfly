@@ -8,6 +8,7 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.5.3'
+        classpath 'io.github.prototypez:app-joint:1.7'
         classpath("com.tencent.tinker:tinker-patch-gradle-plugin:${TINKER_VERSION}") {
             changing = TINKER_VERSION?.endsWith("-SNAPSHOT")
             exclude group: 'com.android.tools.build', module: 'gradle'
