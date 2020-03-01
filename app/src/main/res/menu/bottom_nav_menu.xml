@@ -12,6 +12,12 @@
         android:title="@string/title_dashboard" />
 
     <item
+        android:id="@+id/navigation_bubble"
+        android:icon="@drawable/ic_bubble_chart_black_24dp"
+        android:title="Bubble"
+        />
+
+    <item
         android:id="@+id/navigation_notifications"
         android:icon="@drawable/ic_notifications_black_24dp"
         android:title="@string/title_notifications" />

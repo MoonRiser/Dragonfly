@@ -1,44 +1,50 @@
-package com.example.dragonfly.ui;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationCompat;
+package com.example.dragonfly.ui.fragment.notifications;
 
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.core.app.NotificationCompat;
+import androidx.fragment.app.Fragment;
 
 import com.example.dragonfly.R;
 import com.example.dragonfly.utils.LyNotification;
 import com.example.dragonfly.utils.SoftKeyboardUtil;
 
-public class TestActivity extends AppCompatActivity implements View.OnClickListener {
+public class NotificationsFragment extends Fragment implements View.OnClickListener {
+
+    private View root;
 
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_test);
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             ViewGroup container, Bundle savedInstanceState) {
 
-        findViewById(R.id.BT1).setOnClickListener(this);
-        findViewById(R.id.BT2).setOnClickListener(this);
-        findViewById(R.id.BT3).setOnClickListener(this);
-        findViewById(R.id.BT4).setOnClickListener(this);
-        findViewById(R.id.BT5).setOnClickListener(this);
-        findViewById(R.id.BT6).setOnClickListener(this);
-        findViewById(R.id.BT7).setOnClickListener(this);
-        findViewById(R.id.BT8).setOnClickListener(this);
-        findViewById(R.id.BT9).setOnClickListener(this);
-        findViewById(R.id.BT10).setOnClickListener(this);
-
-
+        root = inflater.inflate(R.layout.fragment_notifications, container, false);
+        final TextView textView = root.findViewById(R.id.text_notifications);
+        root.findViewById(R.id.BT1).setOnClickListener(this);
+        root.findViewById(R.id.BT2).setOnClickListener(this);
+        root.findViewById(R.id.BT3).setOnClickListener(this);
+        root.findViewById(R.id.BT4).setOnClickListener(this);
+        root.findViewById(R.id.BT5).setOnClickListener(this);
+        root.findViewById(R.id.BT6).setOnClickListener(this);
+        root.findViewById(R.id.BT7).setOnClickListener(this);
+        root.findViewById(R.id.BT8).setOnClickListener(this);
+        root.findViewById(R.id.BT9).setOnClickListener(this);
+        root.findViewById(R.id.BT10).setOnClickListener(this);
+        return root;
     }
+
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.BT1:
-                new LyNotification(this)
+                new LyNotification(getActivity())
                         //让通知左右滑的时候是否可以取消通知
                         .setOngoing(true)
                         //设置内容点击处理intent
@@ -51,17 +57,17 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
                         .sendNotification(1, "普通通知", "数风流人物，还看今朝", R.drawable.ic_stat_name);
                 break;
             case R.id.BT2:
-                new LyNotification(this)
+                new LyNotification(getActivity())
                         .setUrge(true)
                         .setColor(Color.RED)//设置通知图标的颜色
                         .sendNotification(2, "紧要通知", "When I was young ,I listen to the radio", R.drawable.ic_stat_name);
                 break;
             case R.id.BT3:
-                new LyNotification(this)
+                new LyNotification(getActivity())
                         .sendNotification("自增id", "点一次多一个", R.drawable.ic_stat_name);
                 break;
             case R.id.BT4:
-                new LyNotification(this)
+                new LyNotification(getActivity())
                         .setUrge(true)
                         .setStyle(new NotificationCompat.BigTextStyle().bigText(
                                 "千古江山，英雄无觅，孙仲谋处。\n" +
@@ -79,7 +85,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
                         )).sendNotification(4, "大文本测试", "", R.drawable.ic_stat_name);
                 break;
             case R.id.BT5:
-                new LyNotification(this)
+                new LyNotification(getActivity())
                         .setUrge(true)
                         .setStyle(new NotificationCompat.BigPictureStyle()
                                 .bigLargeIcon(BitmapFactory.decodeResource(getResources(), com.example.commons.R.drawable.limbo))
@@ -87,24 +93,24 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
                         .sendNotification(5, "大图片测试", "", R.drawable.ic_stat_name);
                 break;
             case R.id.BT6:
-                new LyNotification(this)
+                new LyNotification(getActivity())
                         .clearAllNotification();
                 break;
             case R.id.BT7:
-                new LyNotification(this)
+                new LyNotification(getActivity())
                         .setIndeterminate(false)
                         .setMax(100)
                         .setProgress(75)
                         .sendNotification(7, "进度条通知", "", R.drawable.ic_stat_name);
                 break;
             case R.id.BT8:
-                SoftKeyboardUtil.showKeyboard(findViewById(R.id.ETinput));
+                SoftKeyboardUtil.showKeyboard(root.findViewById(R.id.ETinput));
                 break;
             case R.id.BT9:
-                SoftKeyboardUtil.hideKeyboard(findViewById(R.id.ETinput));
+                SoftKeyboardUtil.hideKeyboard(root.findViewById(R.id.ETinput));
                 break;
             case R.id.BT10:
-                SoftKeyboardUtil.toggleSoftInput(findViewById(R.id.ETinput));
+                SoftKeyboardUtil.toggleSoftInput(root.findViewById(R.id.ETinput));
                 break;
 
         }

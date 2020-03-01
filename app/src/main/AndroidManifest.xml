@@ -17,10 +17,8 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".ui.activity.HomeActivity"
-            android:label="@string/title_activity_home"></activity>
-        <activity android:name=".ui.WebActivity" />
-        <activity android:name=".ui.BubbleActivity" />
-        <activity android:name=".ui.TestActivity" /> <!-- android:requestLegacyExternalStorage="true" -->
+            android:label="@string/title_activity_home" />
+        <!-- android:requestLegacyExternalStorage="true" -->
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.fileProvider"
@@ -44,7 +42,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.MainActivity" />
+        <activity android:name=".ui.TinkerActivity" />
     </application>
 
 </manifest>
