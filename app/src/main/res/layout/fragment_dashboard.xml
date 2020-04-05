@@ -1,25 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:clipChildren="false">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vp2_gallery"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="80dp"
+        android:layout_marginVertical="8dp"
+        android:clipChildren="false">
+
+    </androidx.viewpager2.widget.ViewPager2>
+
 
     <TextView
         android:id="@+id/TVresult"
-        android:layout_width="0dp"
-        android:layout_height="400dp"
-        android:text="result here"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_width="match_parent"
+        android:layout_height="340dp"
+        android:layout_below="@id/vp2_gallery"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+
+        android:text="result here" />
 
     <Button
         android:id="@+id/BTrequst"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/TVresult"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
-        android:text="请求"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TVresult" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_marginTop="8dp"
+        android:text="请求" />
+
+    <Button
+        android:id="@+id/BTchange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="切换"
+        android:layout_toRightOf="@id/BTrequst"
+        android:layout_alignBottom="@id/BTrequst"
+        android:layout_marginStart="16dp"
+        />
+
+
+</RelativeLayout>

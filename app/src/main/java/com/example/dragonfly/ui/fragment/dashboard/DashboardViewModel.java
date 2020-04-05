@@ -17,15 +17,7 @@ public class DashboardViewModel extends ViewModel {
 //    }
 
 
-    private MutableLiveData<Boolean> isShowDialog;
-
-    public DashboardViewModel() {
-        isShowDialog = new MutableLiveData<Boolean>();
-        isShowDialog.setValue(false);
-    }
+    public MutableLiveData<Boolean> isCarousel = new MutableLiveData<>(false);
 
 
-    public MutableLiveData<Boolean> getIsShowDialog() {
-        return isShowDialog;
-    }
 }
