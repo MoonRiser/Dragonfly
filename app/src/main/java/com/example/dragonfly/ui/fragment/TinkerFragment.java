@@ -63,7 +63,7 @@ public class TinkerFragment extends Fragment {
     }
 
 
-    public void load(View view) {
+    private void load(View view) {
 
 
         File patchDir = getActivity().getExternalFilesDir("tinker");
@@ -93,7 +93,7 @@ public class TinkerFragment extends Fragment {
     }
 
 
-    public void verifyStoragePermissions(Activity activity) {
+    private void verifyStoragePermissions(Activity activity) {
 
         try {
             //检测是否有写的权限
@@ -110,7 +110,7 @@ public class TinkerFragment extends Fragment {
     }
 
 
-    public List<String> getDirsNames(File file) {
+    private List<String> getDirsNames(File file) {
         File[] files = file.listFiles();
         if (files == null) {
             Log.e("error", "空目录");

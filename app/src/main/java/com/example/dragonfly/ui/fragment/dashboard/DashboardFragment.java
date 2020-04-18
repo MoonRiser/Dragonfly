@@ -1,7 +1,5 @@
 package com.example.dragonfly.ui.fragment.dashboard;
 
-import android.graphics.Canvas;
-import android.graphics.Rect;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,14 +11,9 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.view.ViewCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelProviders;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager2.widget.MarginPageTransformer;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.dragonfly.R;
@@ -30,9 +23,7 @@ import com.example.dragonfly.bean.Categories;
 import com.example.dragonfly.constant.Constants;
 import com.example.dragonfly.global.LiveDataBus;
 import com.example.dragonfly.transformer.CarouselPageTransformer;
-import com.example.dragonfly.transformer.ScaleOutInPageTransformer;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

@@ -2,7 +2,6 @@ package com.example.dragonfly.transformer;
 
 import android.graphics.Camera;
 import android.graphics.Matrix;
-import android.util.Log;
 import android.view.View;
 
 import androidx.annotation.NonNull;
