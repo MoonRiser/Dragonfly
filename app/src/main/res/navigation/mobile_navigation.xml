@@ -12,6 +12,12 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
+        android:id="@+id/navigation_more"
+        android:label="More"
+        android:name="com.example.dragonfly.ui.fragment.tabs.TabSecondFragment"
+        tools:layout="@layout/fragment_tab_second"/>
+
+    <fragment
         android:id="@+id/navigation_dashboard"
         android:name="com.example.dragonfly.ui.fragment.dashboard.DashboardFragment"
         android:label="@string/title_dashboard"
