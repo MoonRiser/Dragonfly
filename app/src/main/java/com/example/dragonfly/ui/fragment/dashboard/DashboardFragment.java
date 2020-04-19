@@ -71,7 +71,7 @@ public class DashboardFragment extends Fragment {
         datas.addAll(Arrays.asList(R.drawable.image_01, R.drawable.image_02, R.drawable.image_03, R.drawable.play, R.drawable.the_red));
         viewPager2 = view.findViewById(R.id.vp2_gallery);
         viewPager2.setAdapter(new MyGalleryAdapter(datas));
-        viewPager2.setOffscreenPageLimit(3);
+        viewPager2.setOffscreenPageLimit(1);
         //   viewPager2.setPageTransformer(new MarginPageTransformer(32));
         viewPager2.setPageTransformer(new CarouselPageTransformer());
 
