@@ -41,10 +41,10 @@ public class Utils {
      * the error code define by myself
      * should after {@code ShareConstants.ERROR_PATCH_INSERVICE
      */
-    public static final int ERROR_PATCH_GOOGLEPLAY_CHANNEL      = -20;
-    public static final int ERROR_PATCH_ROM_SPACE               = -21;
-    public static final int ERROR_PATCH_MEMORY_LIMIT            = -22;
-    public static final int ERROR_PATCH_CRASH_LIMIT             = -23;
+    public static final int ERROR_PATCH_GOOGLEPLAY_CHANNEL = -20;
+    public static final int ERROR_PATCH_ROM_SPACE = -21;
+    public static final int ERROR_PATCH_MEMORY_LIMIT = -22;
+    public static final int ERROR_PATCH_CRASH_LIMIT = -23;
     public static final int ERROR_PATCH_CONDITION_NOT_SATISFIED = -24;
 
     public static final String PLATFORM = "platform";
@@ -139,7 +139,7 @@ public class Utils {
         }
 
         char[] chr = src.toCharArray();
-        if (chr.length==0) {
+        if (chr.length == 0) {
             return null;
         }
 

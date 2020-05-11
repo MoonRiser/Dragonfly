@@ -31,6 +31,7 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         fragmentAdapter = new MyFragmentAdapter(this);
         viewPager = view.findViewById(R.id.VP1);
+        viewPager.setUserInputEnabled(false);
         viewPager.setAdapter(fragmentAdapter);
         TabLayout tabLayout = view.findViewById(R.id.TAB);
         new TabLayoutMediator(tabLayout, viewPager,

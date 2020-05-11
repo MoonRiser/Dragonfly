@@ -96,8 +96,8 @@ public class TinkerManager {
         AbstractPatch upgradePatchProcessor = new UpgradePatch();
 
         TinkerInstaller.install(appLike,
-            loadReporter, patchReporter, patchListener,
-            SampleResultService.class, upgradePatchProcessor);
+                loadReporter, patchReporter, patchListener,
+                SampleResultService.class, upgradePatchProcessor);
 
         isInstalled = true;
     }

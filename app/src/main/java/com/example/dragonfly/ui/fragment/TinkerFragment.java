@@ -4,20 +4,17 @@ import android.Manifest;
 import android.app.Activity;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.core.app.ActivityCompat;
-import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.fragment.app.Fragment;
+
 import com.example.dragonfly.R;
-import com.example.dragonfly.ui.fragment.home.HomeViewModel;
 import com.tencent.tinker.lib.tinker.Tinker;
 import com.tencent.tinker.lib.tinker.TinkerInstaller;
 import com.tencent.tinker.loader.shareutil.SharePatchFileUtil;
@@ -28,9 +25,6 @@ import java.util.List;
 
 
 public class TinkerFragment extends Fragment {
-
-
-
 
 
     private static final int REQUEST_EXTERNAL_STORAGE = 1;

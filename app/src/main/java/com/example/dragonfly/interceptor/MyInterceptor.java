@@ -1,7 +1,5 @@
 package com.example.dragonfly.interceptor;
 
-import android.util.Log;
-
 import com.example.dragonfly.constant.Constants;
 import com.example.dragonfly.global.LiveDataBus;
 
@@ -29,7 +27,7 @@ public class MyInterceptor implements Interceptor {
 
         if (map.containsKey(urlstr)) {
             if (timestamp - map.get(urlstr) < 1000) {
-                LiveDataBus.get().with(Constants.CLICK_TOO_FAST,String.class).postValue("你手速太快了");
+                LiveDataBus.get().with(Constants.CLICK_TOO_FAST, String.class).postValue("你手速太快了");
                 chain.call().cancel();
 
             } else {

@@ -45,8 +45,8 @@ public class SampleUncaughtExceptionHandler implements Thread.UncaughtExceptionH
     private static final String TAG = "Tinker.SampleUncaughtExHandler";
 
     private final Thread.UncaughtExceptionHandler ueh;
-    private static final long   QUICK_CRASH_ELAPSE  = 10 * 1000;
-    public static final  int    MAX_CRASH_COUNT     = 3;
+    private static final long QUICK_CRASH_ELAPSE = 10 * 1000;
+    public static final int MAX_CRASH_COUNT = 3;
     private static final String DALVIK_XPOSED_CRASH = "Class ref in pre-verified class resolved to unexpected implementation";
 
     public SampleUncaughtExceptionHandler() {

@@ -12,7 +12,6 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.dragonfly.R;
 import com.example.dragonfly.adapter.MyGalleryAdapter;
-import com.example.dragonfly.transformer.CarouselPageTransformer;
 import com.example.dragonfly.transformer.HorizontalStackTransformer;
 import com.example.dragonfly.transformer.ScaleOutInPageTransformer;
 
@@ -30,7 +29,7 @@ public class TabSecondFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        return inflater.inflate(R.layout.fragment_tab_second,container,false);
+        return inflater.inflate(R.layout.fragment_tab_second, container, false);
 
     }
 
@@ -49,9 +48,6 @@ public class TabSecondFragment extends Fragment {
         viewPagerStack.setAdapter(new MyGalleryAdapter(datas));
         viewPagerStack.setOffscreenPageLimit(3);
         viewPagerStack.setPageTransformer(new HorizontalStackTransformer(viewPagerStack));
-
-
-
 
 
     }
